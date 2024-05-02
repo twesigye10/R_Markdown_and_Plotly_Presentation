@@ -1,0 +1,34 @@
+---
+title: "Exploring mtcars Data with plotly"
+author: "Anthony"
+date: "2024-05-02"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = "", message = F, warning = F)
+library(tidyverse)
+library(plotly)
+```
+
+## 
+
+### About the data
+
+The data come by default in R. The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models)
+
+## The code for animated scatter plot
+
+```{r code, echo = TRUE, eval = FALSE}
+plot_ly(mtcars, x = ~wt, y = ~mpg, 
+        frame = ~cyl) %>%
+animation_opts(transition = 0)
+```
+
+## The plot for animated scatter plot
+
+```{r plot, echo = FALSE}
+plot_ly(mtcars, x = ~wt, y = ~mpg, 
+        frame = ~cyl) %>%
+animation_opts(transition = 0)
+```
